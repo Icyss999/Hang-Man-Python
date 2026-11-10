@@ -47,6 +47,15 @@ def format_time(seconds):
 
     return min_text + ":" + sec_text
 
+def attempts_bar(wrong, max_wrong):
+    bar = "["
+    for i in range(1, max_wrong + 1):
+        if i <= wrong:
+            bar = bar + "X"
+        else:
+            bar = bar + "-"
+    return bar + "]"
+
 def mask_word(word, guessed_letters):
     masked = ""
     for ch in word:
