@@ -92,3 +92,15 @@ def draw_screen(category, masked_word, wrong_letters, wrong, max_wrong, seconds,
     print("Time: " + format_time(seconds))
     if show_hint:
         print_hint(hint)
+
+def show_win_screen(word, seconds):
+    clear_screen()
+    print("You win! The word was " + word)
+    print("Your time: " + format_time(seconds))
+
+MAX_WRONG = 6
+def show_lose_screen(word):
+    clear_screen()
+    draw_hangman(MAX_WRONG)
+    print()
+    print("Game Over. The word was " + word)
