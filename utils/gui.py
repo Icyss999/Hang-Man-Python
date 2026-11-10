@@ -80,3 +80,15 @@ def print_hint(hint):
         prefix = "      "
         rest = rest[cut:].strip()
     print(prefix + rest)
+
+def draw_screen(category, masked_word, wrong_letters, wrong, max_wrong, seconds, show_hint, hint):
+    clear_screen()
+    print("Welcome to Hangman. Your theme is: " + category)
+    draw_hangman(wrong)
+    print()
+    print("Word: " + masked_word)
+    print("Wrong: " + wrong_letters)
+    print("Attempts: " + attempts_bar(wrong, max_wrong))
+    print("Time: " + format_time(seconds))
+    if show_hint:
+        print_hint(hint)
