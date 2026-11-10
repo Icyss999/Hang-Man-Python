@@ -1,8 +1,7 @@
 def clear_screen():
     for i in range(30):
         print()
- 
- 
+
 def draw_hangman(wrong):
     head = " "
     body = " "
@@ -10,7 +9,7 @@ def draw_hangman(wrong):
     right_arm = " "
     left_leg = " "
     right_leg = " "
- 
+
     if wrong >= 1:
         head = "O"
     if wrong >= 2:
@@ -23,7 +22,7 @@ def draw_hangman(wrong):
         left_leg = "("
     if wrong >= 6:
         right_leg = ")"
- 
+
     print("  +----+")
     print("  |    |")
     print("  |    " + head)
@@ -31,3 +30,19 @@ def draw_hangman(wrong):
     print("  |   " + left_leg + " " + right_leg)
     print("  |")
     print("=========")
+
+def format_time(seconds):
+    minutes = seconds // 60
+    secs = seconds % 60
+
+    if minutes < 10:
+        min_text = "0" + str(minutes)
+    else:
+        min_text = str(minutes)
+
+    if secs < 10:
+        sec_text = "0" + str(secs)
+    else:
+        sec_text = str(secs)
+
+    return min_text + ":" + sec_text
