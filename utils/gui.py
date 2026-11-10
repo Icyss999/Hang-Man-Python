@@ -57,3 +57,17 @@ def mask_word(word, guessed_letters):
         else:
             masked = masked + "_ "
     return masked
+
+def print_hint(hint):
+    width = 50
+    prefix = "Hint: "
+    rest = hint.strip()
+
+    while len(rest) > width:
+        cut = rest.rfind(" ", 0, width)
+        if cut <= 0:
+            cut = width
+        print(prefix + rest[0:cut])
+        prefix = "      "
+        rest = rest[cut:].strip()
+    print(prefix + rest)
