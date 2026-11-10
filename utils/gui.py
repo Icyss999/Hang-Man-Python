@@ -46,3 +46,14 @@ def format_time(seconds):
         sec_text = str(secs)
 
     return min_text + ":" + sec_text
+
+def mask_word(word, guessed_letters):
+    masked = ""
+    for ch in word:
+        if ch == " " or ch == "-":
+            masked = masked + ch + " "
+        elif ch in guessed_letters:
+            masked = masked + ch + " "
+        else:
+            masked = masked + "_ "
+    return masked
