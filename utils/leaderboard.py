@@ -2,6 +2,7 @@ from db.index import get_db
 import uuid
 
 db = get_db()
+
 def is_valid_uuid(value):
     try:
         uuid.UUID(value)
@@ -41,10 +42,6 @@ def store_user (user_name):
     return dict(name_insert_row)
 
 
-# def fetch_user_id ():
-#
-#     return
-#
 def store_game_event(user_id, timestamp,score):
 
     if (not is_valid_uuid(user_id)):
@@ -83,9 +80,6 @@ def display_leaderboard():
 
     
     return [dict(r) for r in data_row]
-
-# def fetch_user_game_history(user_id):
-#     return
 
 
 
