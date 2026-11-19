@@ -2,9 +2,9 @@ from db.index import get_db
 import uuid
 
 db = get_db()
-def is_valid_uuid(uuid):
+def is_valid_uuid(value):
     try:
-        uuid.UUID(str(uuid))
+        uuid.UUID(value)
         return True
     except ValueError:
         return False
