@@ -5,11 +5,9 @@ from utils.gui import (
     draw_screen,
     show_win_screen,
     show_lose_screen,
-    format_time,
     mask_word,
 )
 from utils.leaderboard import store_user, display_leaderboard
-
 
 def make_hint(word):
     return "Starts with '" + word[0] + "' and has " + str(len(word)) + " letters."
@@ -87,17 +85,4 @@ def ask_for_user():
             print(error)
 
 
-def show_leaderboard():
-    print("\n--- Leaderboard (Top 10) ---")
-    try:
-        rows = display_leaderboard()
-    except ValueError as error:
-        print(error)
-        return
 
-    for rank, row in enumerate(rows, start=1):
-        print(
-            str(rank) + ". " + row["name"]
-            + "  Time: " + format_time(row["timer"])
-            + "  Score: " + str(row["score"])
-        )
