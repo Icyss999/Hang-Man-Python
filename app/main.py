@@ -1,3 +1,5 @@
+from random import choice
+import questionary
 from utils.word_bank import choose_word
 from utils.leaderboard import (store_game_event,display_leaderboard)
 from utils.game_track import (
@@ -11,8 +13,9 @@ import sys
 
 # 1, Gaming process
 def play_game():
+
     
-    input("Press enter to start the game ")
+    key = input("Press enter to start the game ")
     print("Initializing the game....")
 
     user = ask_for_user()
@@ -86,18 +89,19 @@ def main():
         try:
 
             print("====== MENU ======")
-            option = int(input("1. Play game\n2. Display leaderboard\n3. Exit\nYour Option -----> "))
 
+            option = questionary.select(
+                    "Please choose the option below",
+                    choices=["Play Game","Display Leaderboard","Exit the game"]
+                    ).ask()
             # User must only input the index ONLY
-            if not (option == 1 or option == 2 or option ==  3):
-                    print("Please enter the index [1,2,3]")
             
             match option:
-                    case 1:
+                    case "Play Game":
                         play_game()
-                    case 2:
+                    case "Display Leaderboard":
                         show_leaderboard()
-                    case 3:
+                    case "Exit the game":
                         exit_game()
         except ValueError:
             print("Please enter the index 1,2,3")
