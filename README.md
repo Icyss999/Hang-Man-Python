@@ -1,6 +1,8 @@
 # Hang-Man-Python
 This is the final project for computer science survey course
 
+** VIDEO DEMONSTRATION ** : https://youtu.be/EtkGg0VO47A 
+
 **How to run:**
 
 ```
