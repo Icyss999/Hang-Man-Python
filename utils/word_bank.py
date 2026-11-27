@@ -1,5 +1,7 @@
 import random
 
+import questionary
+
 CATEGORIES = {
     "Tourist": ["phnompenh", "siemreap", "passport", "luggage", "souvenir", "airport"],
     "Animals": ["elephant", "lion", "giraffe", "penguin", "dolphin", "kangaroo"],
@@ -9,32 +11,20 @@ CATEGORIES = {
 
 def show_categories():
     print("\nChoose a category:")
-    names = list(CATEGORIES.keys())
-    for number, name in enumerate(names, start=1):
-        print(f"{number}. {name}")
-    return names
+    option =  questionary.select(
+                    "Please choose the option below",
+                    choices= list(CATEGORIES.keys())
+                    ).ask()
 
 
-def pick_category():
-    names = show_categories()
+    return option
 
-    while True:
-        choice = input("Enter number or name: ").strip().lower()
 
-        if choice.isdigit():
-            index = int(choice)
-            if 1 <= index <= len(names):
-                return names[index - 1]
 
-        for name in names:
-            if choice == name.lower():
-                return name
-
-        print("Invalid choice, please try again.")
 
 
 def choose_word():
-    category = pick_category()
+    category = show_categories()
     word = random.choice(CATEGORIES[category])
     return category, word
 
