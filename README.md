@@ -16,13 +16,13 @@ py install -r requirement.txt
 **Contributions**
 
 
-SOY CHUNG TAK:
+SOY Chung Tak:
 - Set up the database file, and connect it to python using sqlite3 
 - Implement the saving, displaying process for both users and game events
 - Testing and polish users experience using tools and libraries inside the main file.
 
 
-SO KUNPICHETHIRAK:
+SO Kunpichethirak:
 - Implement all necessary UI of the hangman 
 - Format the timer into a readable format
 - handle the necessary screen display including masked the characters, and display the hints.
